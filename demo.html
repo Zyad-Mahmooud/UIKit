@@ -1,0 +1,71 @@
+<meta name="viewport" content="height=1700,width=device-width">
+<link rel="stylesheet" href="app.css">
+<script src="UIKit.min.js" type="text/javascript" charset="utf-8"></script>
+<div class="path">
+  <div class="slider">
+    
+  </div>
+</div>
+<div class="boxes">
+  <div class="box">
+    <b>#1</b>
+  </div>
+  <div class="box">
+    <b>#1</b>
+  </div>
+  <div class="box">
+    <b>#1</b>
+  </div>
+  <div class="box">
+    <b>#1</b>
+  </div>
+  <div class="box">
+    <b>#1</b>
+  </div>
+  <div class="box">
+    <b>#1</b>
+  </div>
+  <div class="box">
+    <b>#1</b>
+  </div>
+  <div class="box">
+    <b>#1</b>
+  </div>
+  <div class="box">
+    <b>#1</b>
+  </div>
+  <div class="box">
+    <b>#1</b>
+  </div>
+  <div class="box">
+    <b>#1</b>
+  </div>
+  <div class="box">
+    <b>#1</b>
+  </div>
+  <div class="box">
+    <b>#1</b>
+  </div>
+  <div class="box">
+    <b>#1</b>
+  </div>
+  <div class="box">
+    <b>#1</b>
+  </div>
+</div>
+<script>
+var Kit = new UIKit({
+  items: [...document.querySelectorAll('.boxes .box')],
+  trackVisibility: true,
+  delay: 100, // 100 milliseconds is the minimum delay is supported
+  onLayoutChange: function(e) {
+    e.element.style.opacity = e.ratio;
+  },
+  ratio: [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1]
+});
+Kit.onInteraction({
+  onLayoutChange: function(e) {
+    document.querySelector(".path .slider").style.height = e.percentage+"%";
+  }
+});
+</script>
